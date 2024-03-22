@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_taller__espinozas_taller__espinozas,taller__espinozas.taller__espinozas,model_taller__espinozas_taller__espinozas,base.group_user,1,1,1,1
+access_mi_modulo_producto,mi_modulo.producto,model_mi_modulo_producto,base.group_user,1,1,1,1
+access_mi_modulo_proveedor,mi_modulo.proveedor,model_mi_modulo_proveedor,base.group_user,1,1,1,1
+access_mi_modulo_venta,mi_modulo.venta,model_mi_modulo_venta,base.group_user,1,1,1,1
+access_mi_modulo_entrega_mercancia,mi_modulo.entrega_mercancia,model_mi_modulo_entrega_mercancia,base.group_user,1,1,1,1
+access_mi_modulo_control_ventas_diarias,mi_modulo.control_ventas_diarias,model_mi_modulo_control_ventas_diarias,base.group_user,1,1,1,1
+access_mi_modulo_horario_operador,mi_modulo.horario_operador,model_mi_modulo_horario_operador,base.group_user,1,1,1,1

@@ -1,0 +1,273 @@
+<odoo>
+  <data>
+     <!-- explicit list view definition  -->
+
+    <record model="ir.ui.view" id="taller__espinozas.list">
+      <field name="name">Taller_Espinozas list</field>
+      <field name="model">taller__espinozas.taller__espinozas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+        </tree>
+      </field>
+    </record>
+
+<record model="ir.ui.view" id="taller__espinozas.form">
+          <field name="name">Taller_Espinozas form</field>
+          <field name="model">taller__espinozas.taller__espinozas</field>
+          <field name="arch" type="xml">
+              <form string="taller">
+                  <sheet>
+                      <group>
+                          <field name="name"/>
+                          <field name="value"/>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+      <record id="producto_list" model="ir.ui.view">
+        <field name="name">Producto tree</field>
+        <field name="model">mi_modulo.producto</field>
+        <field name="arch" type="xml">
+          <tree string="">
+            <field name="name"/>
+            <field name="cantidad"/>
+            <field name="precio"/>
+            <field name="proveedor_nombre"/> 
+          </tree>
+        </field>
+      </record>
+
+    <!-- Vista de formulario para Producto -->
+      <record model="ir.ui.view" id="producto_form">
+          <field name="name">Producto Form</field>
+          <field name="model">mi_modulo.producto</field>
+          <field name="arch" type="xml">
+              <form string="Producto">
+                  <sheet>
+                      <group>
+                          <field name="name"/>
+                          <field name="cantidad"/>
+                          <field name="precio"/>
+                          <field name="proveedor_id"/>
+                          <field name="proveedor_nombre"/>
+                      </group>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+
+        <record model="ir.ui.view" id="proveedor_form">
+            <field name="name">Proveedor Form</field>
+            <field name="model">mi_modulo.proveedor</field>
+            <field name="arch" type="xml">
+                <form string="Proveedor">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="telefono"/>
+                            <field name="direccion"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="proveedor_list" model="ir.ui.view">
+        <field name="name">Proveedor tree</field>
+        <field name="model">mi_modulo.proveedor</field>
+        <field name="arch" type="xml">
+          <tree string="">
+            <field name="nombre"/>
+            <field name="telefono"/>
+            <field name="direccion"/>
+          </tree>
+        </field>
+      </record>
+
+        <record model="ir.ui.view" id="venta_form">
+            <field name="name">Venta Form</field>
+            <field name="model">mi_modulo.venta</field>
+            <field name="arch" type="xml">
+                <form string="Venta">
+                    <sheet>
+                        <group>
+                            <field name="producto_id"/>
+                            <field name="cantidad"/>
+                            <field name="total"/>
+                            <field name="fecha"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="venta_list" model="ir.ui.view">
+        <field name="name">Venta tree</field>
+        <field name="model">mi_modulo.venta</field>
+        <field name="arch" type="xml">
+          <tree string="">
+            <field name="producto_id"/>
+            <field name="cantidad"/>
+            <field name="total"/>
+            <field name="fecha"/>
+          </tree>
+        </field>
+      </record>
+
+        <record model="ir.ui.view" id="entrega_form">
+            <field name="name">Entrega Form</field>
+            <field name="model">mi_modulo.entrega_mercancia</field>
+            <field name="arch" type="xml">
+                <form string="Entrega">
+                    <sheet>
+                        <group>
+                            <field name="productos_recibidos"/>
+                            <field name="proveedor_id"/>
+                            <field name="fecha_entrega"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="mercancia_list" model="ir.ui.view">
+        <field name="name">mercancia tree</field>
+        <field name="model">mi_modulo.entrega_mercancia</field>
+        <field name="arch" type="xml">
+          <tree string="">
+          <field name="productos_recibidos"/>
+          <field name="proveedor_id"/>
+          <field name="fecha_entrega"/>
+          </tree>
+        </field>
+      </record>
+
+        <record model="ir.ui.view" id="diarias_form">
+            <field name="name">diarias Form</field>
+            <field name="model">mi_modulo.control_ventas_diarias</field>
+            <field name="arch" type="xml">
+                <form string="diarias">
+                    <sheet>
+                        <group>
+                            <field name="operador_id"/>
+                            <field name="productos_vendidos"/>
+                            <field name="efectivo_total"/>
+                            <field name="fecha"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="diarias_list" model="ir.ui.view">
+        <field name="name">ventas diarias tree</field>
+        <field name="model">mi_modulo.control_ventas_diarias</field>
+        <field name="arch" type="xml">
+          <tree string="">
+            <field name="operador_id"/>
+            <field name="productos_vendidos"/>
+            <field name="efectivo_total"/>
+            <field name="fecha"/>
+          </tree>
+        </field>
+      </record>
+
+        <record model="ir.ui.view" id="horarios_form">
+            <field name="name">Horarios Form</field>
+            <field name="model">mi_modulo.horario_operador</field>
+            <field name="arch" type="xml">
+                <form string="Horarios">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="horas_trabajadas"/>
+                            <field name="dias_trabajados"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+      <record id="operador_list" model="ir.ui.view">
+        <field name="name">Horarios de operador tree</field>
+        <field name="model">mi_modulo.horario_operador</field>
+        <field name="arch" type="xml">
+          <tree string="">
+            <field name="nombre"/>
+            <field name="horas_trabajadas"/>
+            <field name="dias_trabajados"/>
+          </tree>
+        </field>
+      </record>
+
+     <!-- actions opening views on models  -->
+
+    <record model="ir.actions.act_window" id="taller__espinozas.action_window">
+      <field name="name">INICIO</field>
+      <field name="res_model">taller__espinozas.taller__espinozas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="productos_espinozas_action_window">
+      <field name="name">PRODUCTO</field>
+      <field name="res_model">mi_modulo.producto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="proveedor_espinozas_action_window">
+      <field name="name">PROVEEDOR</field>
+      <field name="res_model">mi_modulo.proveedor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="venta_espinozas_action_window">
+      <field name="name">VENTA</field>
+      <field name="res_model">mi_modulo.venta</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="entrega_espinozas_action_window">
+      <field name="name">ENTREGA DE MERCANCIA</field>
+      <field name="res_model">mi_modulo.entrega_mercancia</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="control_espinozas_action_window">
+      <field name="name">VENTAS DIARIAS</field>
+      <field name="res_model">mi_modulo.control_ventas_diarias</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="horario_espinozas_action_window">
+      <field name="name">HORARIOS</field>
+      <field name="res_model">mi_modulo.horario_operador</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+     <!-- Top menu item  -->
+
+    <menuitem name="Taller Espinozas" id="taller__espinozas.menu_root"/>
+
+     <!-- menu categories  -->
+
+    <!-- <menuitem name="INICIO" id="taller__espinozas.menu_1" parent="taller__espinozas.menu_root" action="taller__espinozas.action_window"/> -->
+    <menuitem name="PRODUCTO" id="taller__espinozas.menu_2" parent="taller__espinozas.menu_root" action="productos_espinozas_action_window"/>
+    <menuitem name="PROVEEDOR" id="taller__espinozas.menu_3" parent="taller__espinozas.menu_root" action="proveedor_espinozas_action_window"/>
+    <menuitem name="VENTA" id="taller__espinozas.menu_4" parent="taller__espinozas.menu_root" action="venta_espinozas_action_window"/>
+    <menuitem name="ENTREGA DE MERCANCIA" id="taller__espinozas.menu_5" parent="taller__espinozas.menu_root" action="entrega_espinozas_action_window"/>
+    <menuitem name="VENTAS DIARIAS" id="taller__espinozas.menu_6" parent="taller__espinozas.menu_root" action="control_espinozas_action_window"/>
+    <menuitem name="HORARIO DE OPERADORES" id="taller__espinozas.menu_7" parent="taller__espinozas.menu_root" action="horario_espinozas_action_window"/>
+        <!-- actions  -->
+
+    <!-- <menuitem name="List" id="taller__espinozas.menu_1_list" parent="taller__espinozas.menu_1"
+              action="taller__espinozas.action_window"/> -->
+
+  </data>
+</odoo>
